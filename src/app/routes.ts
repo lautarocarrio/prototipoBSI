@@ -11,15 +11,10 @@ import Login from "./components/auth/Login";
 
 export const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     children:[
       {index:true, Component: Login}
     ]
-  },
-  {
-    path:"/",
-    Component: Layout,
-    children:[{path:"/",Component: Orders}]
   },
   {
     path: "/pedidos",

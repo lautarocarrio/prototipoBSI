@@ -29,7 +29,7 @@ export default function Login() {
     try {
       const success = await login(email, password);
       if (success) {
-        navigate("/");
+        navigate("/pedidos");
       } else {
         setError("Credenciales inválidas");
       }

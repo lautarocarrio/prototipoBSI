@@ -92,7 +92,7 @@ export default function CreateOrder() {
     });
 
     alert("Pedido creado exitosamente");
-    navigate("/");
+    navigate("/pedidos");
   };
 
   return (
@@ -286,7 +286,7 @@ export default function CreateOrder() {
         {/* Botones de acción */}
         <div className="flex gap-4 justify-end">
           <Link
-            to="/"
+            to="/pedidos"
             className="px-6 py-2 border border-[#e2e8f0] rounded-lg hover:bg-gray-50 transition-colors"
           >
             Cancelar
