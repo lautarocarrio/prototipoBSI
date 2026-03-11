@@ -20,7 +20,6 @@ export default function CreateOrder() {
     solicitante: "",
     fechaEstimadaLlegada: "",
     obraDestino: "",
-    proveedor: "",
     observaciones: "",
   });
 
@@ -77,7 +76,7 @@ export default function CreateOrder() {
     
     // Validación básica
     if (!formData.nombreOrden || !formData.solicitante || !formData.fechaEstimadaLlegada || 
-        !formData.obraDestino || !formData.proveedor || items.length === 0) {
+        !formData.obraDestino || items.length === 0) {
       alert("Por favor completa todos los campos obligatorios y agrega al menos un item");
       return;
     }
@@ -100,7 +99,7 @@ export default function CreateOrder() {
       {/* Header */}
       <div className="mb-8">
         <Link 
-          to="/" 
+          to="/pedidos" 
           className="inline-flex items-center gap-2 text-[#64748b] hover:text-red-600 mb-4"
         >
           <ArrowLeft size={20} />

@@ -115,7 +115,7 @@ export default function Login() {
                 <Input
                   id="password"
                   type="password"
-                  placeholder="•••••���••"
+                  placeholder="•••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="pl-10 border-gray-300 focus:border-yellow-500 focus:ring-yellow-500"

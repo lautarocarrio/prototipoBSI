@@ -73,7 +73,7 @@ export default function OrderDetail() {
       <div className="p-8 bg-white">
         <div className="text-center">
           <h2 className="text-2xl text-red-600 mb-4">Pedido no encontrado</h2>
-          <Link to="/" className="text-yellow-600 hover:text-yellow-700">
+          <Link to="/pedidos" className="text-yellow-600 hover:text-yellow-700">
             Volver a pedidos
           </Link>
         </div>
@@ -115,7 +115,7 @@ export default function OrderDetail() {
       {/* Header */}
       <div className="mb-8">
         <Link 
-          to="/" 
+          to="/pedidos" 
           className="inline-flex items-center gap-2 text-[#64748b] hover:text-red-600 mb-4"
         >
           <ArrowLeft size={20} />
