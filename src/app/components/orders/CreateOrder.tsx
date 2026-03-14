@@ -119,48 +119,22 @@ export default function CreateOrder() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm text-[#64748b] mb-2">
-                Nombre de Orden de Compra <span className="text-red-600">*</span>
+                Planta de Destino <span className="text-red-600">*</span>
               </label>
-              <input
-                type="text"
-                name="nombreOrden"
-                value={formData.nombreOrden}
-                onChange={handleInputChange}
-                placeholder="Ej: OC-2026-001 - Materiales Construcción"
-                className="w-full px-4 py-2 border border-[#e2e8f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm text-[#64748b] mb-2">
-                Solicitante <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="text"
-                name="solicitante"
-                value={formData.solicitante}
-                onChange={handleInputChange}
-                placeholder="Nombre del solicitante"
-                className="w-full px-4 py-2 border border-[#e2e8f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm text-[#64748b] mb-2">
-                Fecha Estimada de Llegada <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="date"
-                name="fechaEstimadaLlegada"
-                value={formData.fechaEstimadaLlegada}
+              <select
+                name="obraDestino"
+                value={formData.obraDestino}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border border-[#e2e8f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                 required
-              />
+              >
+                <option value="">Selecciona una planta</option>
+                <option value="Edificio Residencial Norte">Edificio Residencial Norte</option>
+                <option value="Centro Comercial Plaza Sur">Centro Comercial Plaza Sur</option>
+                <option value="Puente Vial Este">Puente Vial Este</option>
+                <option value="Hospital Regional">Hospital Regional</option>
+              </select>
             </div>
-
             <div>
               <label className="block text-sm text-[#64748b] mb-2">
                 Obra de Destino <span className="text-red-600">*</span>
@@ -179,7 +153,44 @@ export default function CreateOrder() {
                 <option value="Hospital Regional">Hospital Regional</option>
               </select>
             </div>
+            <div>
+              <label className="block text-sm text-[#64748b] mb-2">
+                Solicitante <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                name="solicitante"
+                value={formData.solicitante}
+                onChange={handleInputChange}
+                placeholder="Nombre del solicitante"
+                className="w-full px-4 py-2 border border-[#e2e8f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-[#64748b] mb-2">
+                Fecha de creación <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="date"
+                name="fechaEstimadaLlegada"
+                value={formData.fechaEstimadaLlegada}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border border-[#e2e8f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                required
+              />
+            </div>
           </div>
+          <div>
+              <label className="block text-sm text-[#64748b] mb-2">
+                <input type="radio" name="adicional" value="adiciona"/> Adicional
+              </label>
+              <label>
+                <input type="radio" name="adicional" value="contemplado"/> Contemplado
+              </label>
+            </div>
+              
         </div>
 
         {/* Items del Pedido */}

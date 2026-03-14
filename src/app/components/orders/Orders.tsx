@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, Plus, Filter, ExternalLink } from "lucide-react";
-import { Link, Navigate, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 interface Order {
   id: string;
@@ -12,80 +12,7 @@ interface Order {
   estado: "Pendiente" | "Aprobada" | "En Tránsito" | "Recibida" | "Finalizada";
 }
 
-const orders: Order[] = [
-  {
-    id: "1",
-    nombreOrden: "OC-2026-001 - Materiales Construcción",
-    fechaCreacion: "2026-03-01",
-    solicitante: "Juan Pérez",
-    fechaEstimadaLlegada: "2026-03-15",
-    obraDestino: "Edificio Residencial Norte",
-    estado: "Aprobada"
-  },
-  {
-    id: "2",
-    nombreOrden: "OC-2026-002 - Equipos Eléctricos",
-    fechaCreacion: "2026-03-02",
-    solicitante: "María García",
-    fechaEstimadaLlegada: "2026-03-18",
-    obraDestino: "Centro Comercial Plaza Sur",
-    estado: "En Tránsito"
-  },
-  {
-    id: "3",
-    nombreOrden: "OC-2026-003 - Herramientas Especializadas",
-    fechaCreacion: "2026-02-28",
-    solicitante: "Carlos López",
-    fechaEstimadaLlegada: "2026-03-10",
-    obraDestino: "Puente Vial Este",
-    estado: "Recibida"
-  },
-  {
-    id: "4",
-    nombreOrden: "OC-2026-004 - Materiales de Acabado",
-    fechaCreacion: "2026-03-03",
-    solicitante: "Ana Martínez",
-    fechaEstimadaLlegada: "2026-03-20",
-    obraDestino: "Edificio Residencial Norte",
-    estado: "Pendiente"
-  },
-  {
-    id: "5",
-    nombreOrden: "OC-2026-005 - Equipos de Seguridad",
-    fechaCreacion: "2026-02-25",
-    solicitante: "Luis Fernández",
-    fechaEstimadaLlegada: "2026-03-08",
-    obraDestino: "Hospital Regional",
-    estado: "Recibida"
-  },
-  {
-    id: "6",
-    nombreOrden: "OC-2026-006 - Cemento y Agregados",
-    fechaCreacion: "2026-03-01",
-    solicitante: "Elena Sánchez",
-    fechaEstimadaLlegada: "2026-03-12",
-    obraDestino: "Puente Vial Este",
-    estado: "En Tránsito"
-  },
-  {
-    id: "7",
-    nombreOrden: "OC-2026-007 - Maquinaria Pesada",
-    fechaCreacion: "2026-02-27",
-    solicitante: "Roberto Díaz",
-    fechaEstimadaLlegada: "2026-03-25",
-    obraDestino: "Centro Comercial Plaza Sur",
-    estado: "Aprobada"
-  },
-  {
-    id: "8",
-    nombreOrden: "OC-2026-008 - Materiales de Fontanería",
-    fechaCreacion: "2026-03-02",
-    solicitante: "Patricia Ruiz",
-    fechaEstimadaLlegada: "2026-03-16",
-    obraDestino: "Hospital Regional",
-    estado: "Pendiente"
-  }
-];
+const orders: Order[] = [];
 
 export default function Orders() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -125,7 +52,7 @@ export default function Orders() {
         </div>
         <button onClick={crateOrder} className="flex items-center gap-2 bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">
           <Plus size={20} />
-          Nueva Orden de compra
+          Nueva Solicitud de Pedido
         </button>
       </div>
 
